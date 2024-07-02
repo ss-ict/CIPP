@@ -230,6 +230,8 @@ const ApplyStandard = () => {
           Install options:
           <RFFCFormSwitch value={true} name="InstallAsSystem" label="Install as system" />
           <RFFCFormSwitch name="DisableRestart" label="Disable Restart" />
+          <RFFCFormSwitch name="IgnoreChecksums" label="Ignore Checksums" />
+          <RFFCFormSwitch name="TraceEnable" label="Enable Trace for debugging" />
           <RFFCFormCheck name="InstallationIntent" label="Mark for Uninstallation" />
           <RFFCFormRadio
             value="On"
@@ -304,6 +306,12 @@ const ApplyStandard = () => {
                         <CListGroupItem className="d-flex justify-content-between align-items-center">
                           Disable Restart: {props.values.DisableRestart ? 'Yes' : 'No'}
                         </CListGroupItem>
+                        <CListGroupItem className="d-flex justify-content-between align-items-center">
+                          Enable Trace: {props.values.TraceEnable ? 'Yes' : 'No'}
+                        </CListGroupItem>
+                        <CListGroupItem className="d-flex justify-content-between align-items-center">
+                          Ignore Checksums: {props.values.IgnoreChecksums ? 'Yes' : 'No'}
+                        </CListGroupItem>                        
                         <CListGroupItem className="d-flex justify-content-between align-items-center">
                           Assign to:
                           {props.values.AssignTo == 'on' ? ' None' : ` ${props.values.AssignTo}`}
