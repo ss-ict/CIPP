@@ -217,7 +217,7 @@
     "name": "standards.DisableBasicAuthSMTP",
     "cat": "Global Standards",
     "tag": [],
-    "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants. ",
+    "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants.",
     "docsDescription": "Disables SMTP basic authentication for the tenant and all users with it explicitly enabled.",
     "addedComponent": [],
     "label": "Disable SMTP Basic Authentication",
@@ -231,8 +231,8 @@
     "name": "standards.DisableBasicAuthSMTPCustom",
     "cat": "Global Standards",
     "tag": [],
-    "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants. ",
-    "docsDescription": "Disables SMTP basic authentication for the tenant and all users with it explicitly enabled.",
+    "helpText": "Disables SMTP AUTH for the organization and all users, with ability to set exclusion group.",
+    "docsDescription": "Disables SMTP basic authentication for the tenant and all users with it explicitly enabled, unless in defined exclusion group.",
     "addedComponent": [
       {
         "type": "textField",
