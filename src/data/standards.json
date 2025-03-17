@@ -219,8 +219,13 @@
     "tag": [],
     "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants. ",
     "docsDescription": "Disables SMTP basic authentication for the tenant and all users with it explicitly enabled.",
-    "addedComponent": [],
-    "label": "Disable SMTP Basic Authentication",
+    "addedComponent": [
+      {
+        "type": "textField",
+        "name": "standards.DisableBasicAuthSMTP.ExcludeGroup",
+        "label": "Exclude Group Name"
+      }
+    ],    "label": "Disable SMTP Basic Authentication",
     "impact": "Medium Impact",
     "impactColour": "warning",
     "addedDate": "2021-11-16",
