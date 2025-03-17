@@ -213,8 +213,22 @@
     "powershellEquivalent": "Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'",
     "recommendedBy": ["CIPP"]
   },
-  {
+   {
     "name": "standards.DisableBasicAuthSMTP",
+    "cat": "Global Standards",
+    "tag": [],
+    "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants. ",
+    "docsDescription": "Disables SMTP basic authentication for the tenant and all users with it explicitly enabled.",
+    "addedComponent": [],
+    "label": "Disable SMTP Basic Authentication",
+    "impact": "Medium Impact",
+    "impactColour": "warning",
+    "addedDate": "2021-11-16",
+    "powershellEquivalent": "Set-TransportConfig -SmtpClientAuthenticationDisabled $true",
+    "recommendedBy": ["CIS", "CIPP"]
+  },
+  {
+    "name": "standards.DisableBasicAuthSMTPCustom",
     "cat": "Global Standards",
     "tag": [],
     "helpText": "Disables SMTP AUTH for the organization and all users. This is the default for new tenants. ",
@@ -222,7 +236,7 @@
     "addedComponent": [
       {
         "type": "textField",
-        "name": "standards.DisableBasicAuthSMTP.ExcludeGroup",
+        "name": "standards.DisableBasicAuthSMTPCustom.ExcludeGroup",
         "label": "Exclude Group Name"
       }
     ],    "label": "Disable SMTP Basic Authentication",
