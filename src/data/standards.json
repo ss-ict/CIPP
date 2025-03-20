@@ -239,10 +239,11 @@
         "name": "standards.DisableBasicAuthSMTPCustom.ExcludeGroup",
         "label": "Exclude Group Name"
       }
-    ],    "label": "Disable SMTP Basic Authentication",
+    ], 
+    "label": "Disable SMTP Basic Authentication (Custom)",
     "impact": "Medium Impact",
     "impactColour": "warning",
-    "addedDate": "2021-11-16",
+    "addedDate": "2025-03-15",
     "powershellEquivalent": "Set-TransportConfig -SmtpClientAuthenticationDisabled $true",
     "recommendedBy": ["CIS", "CIPP"]
   },
