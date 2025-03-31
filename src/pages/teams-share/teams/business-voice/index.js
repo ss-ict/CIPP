@@ -105,7 +105,8 @@ const Page = () => {
     <CippTablePage
       title={pageTitle}
       apiUrl="/api/ListTeamsVoice"
-      offCanvas={offCanvas}
+      actions={actions}
+      //offCanvas={offCanvas}
       simpleColumns={columns}
       filterlist={filters}
     />
