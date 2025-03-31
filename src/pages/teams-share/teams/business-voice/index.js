@@ -96,13 +96,13 @@ const Page = () => {
         "PlaceName",
         "ActivationState",
         "IsOperatorConnect",
-        "AcquisitionDate",
+        "AcquisitionDate"
       ]}
       filterlist={[
         {
           filterName: "Unassigned User Numbers",
           filter:
-            "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
+            "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment"
         },
       ]}
     />
