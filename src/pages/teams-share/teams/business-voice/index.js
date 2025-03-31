@@ -15,7 +15,7 @@ const Page = () => {
       data: {
         PhoneNumber: "TelephoneNumber",
         PhoneNumberType: "NumberType",
-        locationOnly: false
+        locationOnly: false,
       },
       fields: [
         {
@@ -27,7 +27,7 @@ const Page = () => {
           api: {
             url: "/api/listUsers",
             labelField: (input) => `${input.displayName} (${input.userPrincipalName})`,
-            valueField: "userPrincipalName"
+            valueField: "userPrincipalName",
           },
         },
       ],
@@ -41,7 +41,7 @@ const Page = () => {
       data: {
         PhoneNumber: "TelephoneNumber",
         AssignedTo: "AssignedTo",
-        PhoneNumberType: "NumberType"
+        PhoneNumberType: "NumberType",
       },
       confirmText: "Are you sure you want to remove the assignment?",
     },
@@ -52,7 +52,7 @@ const Page = () => {
       url: "/api/ExecTeamsVoicePhoneNumberAssignment",
       data: {
         PhoneNumber: "TelephoneNumber",
-        locationOnly: true
+        locationOnly: true,
       },
       fields: [
         {
@@ -62,7 +62,7 @@ const Page = () => {
           api: {
             url: "/api/ListTeamsLisLocation",
             labelField: "Description",
-            valueField: "LocationId"
+            valueField: "LocationId",
           },
         },
       ],
@@ -75,36 +75,39 @@ const Page = () => {
       "TelephoneNumber",
       "AcquiredCapabilities",
       "AssignmentStatus",
-      "AssignedTo"
+      "AssignedTo",
     ],
     actions: actions,
   };
+
+  const columns = 
+    [ "AssignedTo",
+      "TelephoneNumber",
+      "AssignmentStatus",
+      "NumberType",
+      "AcquiredCapabilities",
+      "IsoCountryCode",
+      "PlaceName",
+      "ActivationState",
+      "IsOperatorConnect",
+      "AcquisitionDate"
+    ]
+  
+  const filters = [
+    {
+      filterName: "Unassigned User Numbers",
+      filter:
+        "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
+    },
+  ];
 
   return (
     <CippTablePage
       title={pageTitle}
       apiUrl="/api/ListTeamsVoice"
-      actions={actions}
       offCanvas={offCanvas}
-      simpleColumns={[
-        "AssignedTo",
-        "TelephoneNumber",
-        "AssignmentStatus",
-        "NumberType",
-        "AcquiredCapabilities",
-        "IsoCountryCode",
-        "PlaceName",
-        "ActivationState",
-        "IsOperatorConnect",
-        "AcquisitionDate"
-      ]}
-      filterlist={[
-        {
-          filterName: "Unassigned User Numbers",
-          filter:
-            "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment"
-        },
-      ]}
+      simpleColumns={columns}
+      filterlist={filters}
     />
   );
 };
