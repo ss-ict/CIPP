@@ -99,6 +99,10 @@ const Page = () => {
       filterName: "Unassigned User Numbers",
       filter: "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
     },
+    {
+      filterName: "Assigned User Numbers",
+      filter: "Complex: AssignmentStatus eq Assigned",
+    },
   ];
 
   return (
@@ -108,6 +112,7 @@ const Page = () => {
       actions={actions}
       offCanvas={offCanvas}
       simpleColumns={columns}
+      filters={filters}
     />
   );
 };
