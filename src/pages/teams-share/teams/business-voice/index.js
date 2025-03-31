@@ -1,6 +1,7 @@
 import { Layout as DashboardLayout } from "/src/layouts/index.js";
 import { CippTablePage } from "/src/components/CippComponents/CippTablePage.jsx";
-import { PersonAdd, PersonRemove, LocationOn } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import { Add, PersonAdd, PersonRemove, LocationOn, NoAccounts } from "@mui/icons-material";
 
 const Page = () => {
   const pageTitle = "Teams Business Voice";
@@ -80,24 +81,23 @@ const Page = () => {
     actions: actions,
   };
 
-  const columns = 
-    [ "AssignedTo",
-      "TelephoneNumber",
-      "AssignmentStatus",
-      "NumberType",
-      "AcquiredCapabilities",
-      "IsoCountryCode",
-      "PlaceName",
-      "ActivationState",
-      "IsOperatorConnect",
-      "AcquisitionDate"
-    ]
-  
+  const columns = [
+    "AssignedTo",
+    "TelephoneNumber",
+    "AssignmentStatus",
+    "NumberType",
+    "AcquiredCapabilities",
+    "IsoCountryCode",
+    "PlaceName",
+    "ActivationState",
+    "IsOperatorConnect",
+    "AcquisitionDate",
+  ];
+
   const filters = [
     {
       filterName: "Unassigned User Numbers",
-      filter:
-        "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
+      filter: "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
     },
   ];
 
@@ -106,9 +106,8 @@ const Page = () => {
       title={pageTitle}
       apiUrl="/api/ListTeamsVoice"
       actions={actions}
-      //offCanvas={offCanvas}
+      offCanvas={offCanvas}
       simpleColumns={columns}
-      filterlist={filters}
     />
   );
 };
