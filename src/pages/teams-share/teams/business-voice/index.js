@@ -97,11 +97,11 @@ const Page = () => {
   const filters = [
     {
       filterName: "Unassigned User Numbers",
-      filter: "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
+      filter: "AssignmentStatus eq Unassigned and AcquiredCapabilities like UserAssignment",
     },
     {
       filterName: "Assigned User Numbers",
-      filter: "Complex: AssignmentStatus eq Assigned; AcquiredCapabilities like UserAssignment",
+      filter: "AssignmentStatus eq UserAssigned and AcquiredCapabilities like UserAssignment",
     },
   ];
 
