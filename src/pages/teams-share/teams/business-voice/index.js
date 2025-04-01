@@ -82,7 +82,7 @@ const Page = () => {
   };
 
   const columns = [
-    "AssignedTo",
+    "AssignedTo.displayName",
     "TelephoneNumber",
     "AssignmentStatus",
     "NumberType",
@@ -101,7 +101,7 @@ const Page = () => {
     },
     {
       filterName: "Assigned User Numbers",
-      filter: "Complex: AssignmentStatus eq Assigned",
+      filter: "Complex: AssignmentStatus eq Assigned; AcquiredCapabilities like UserAssignment",
     },
   ];
 
