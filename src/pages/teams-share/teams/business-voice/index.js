@@ -1,7 +1,6 @@
-import { Layout as DashboardLayout } from "/src/layouts/index.js";
-import { CippTablePage } from "/src/components/CippComponents/CippTablePage.jsx";
-import { Button } from "@mui/material";
-import { Add, PersonAdd, PersonRemove, LocationOn, NoAccounts } from "@mui/icons-material";
+import { Layout as DashboardLayout } from "../../../../layouts/index.js";
+import { CippTablePage } from "../../../../components/CippComponents/CippTablePage.jsx";
+import { PersonAdd, PersonRemove, LocationOn } from "@mui/icons-material";
 
 const Page = () => {
   const pageTitle = "Teams Business Voice";
@@ -81,38 +80,31 @@ const Page = () => {
     actions: actions,
   };
 
-  const columns = [
-    "AssignedTo.displayName",
-    "TelephoneNumber",
-    "AssignmentStatus",
-    "NumberType",
-    "AcquiredCapabilities",
-    "IsoCountryCode",
-    "PlaceName",
-    "ActivationState",
-    "IsOperatorConnect",
-    "AcquisitionDate",
-  ];
-
-  const filters = [
-    {
-      filterName: "Unassigned User Numbers",
-      filter: "AssignmentStatus eq Unassigned and AcquiredCapabilities like UserAssignment",
-    },
-    {
-      filterName: "Assigned User Numbers",
-      filter: "AssignmentStatus eq UserAssigned and AcquiredCapabilities like UserAssignment",
-    },
-  ];
-
   return (
     <CippTablePage
       title={pageTitle}
       apiUrl="/api/ListTeamsVoice"
       actions={actions}
       offCanvas={offCanvas}
-      simpleColumns={columns}
-      filters={filters}
+      simpleColumns={[
+        "AssignedTo",
+        "TelephoneNumber",
+        "AssignmentStatus",
+        "NumberType",
+        "AcquiredCapabilities",
+        "IsoCountryCode",
+        "PlaceName",
+        "ActivationState",
+        "IsOperatorConnect",
+        "AcquisitionDate",
+      ]}
+      filterlist={[
+        {
+          filterName: "Unassigned User Numbers",
+          filter:
+            "Complex: AssignmentStatus eq Unassigned; AcquiredCapabilities like UserAssignment",
+        },
+      ]}
     />
   );
 };
